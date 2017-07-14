@@ -1,9 +1,13 @@
 # LibTensorFlowForiOSSwift
 
+This is a TensorFlow demo that can be run on iOS. It implements a text classifier that can predict emoji from short text (like tweets).
 
-changed by [`emoji-tf-ios`](https://github.com/h4x3rotab/emoji-tf-ios)
+<div style="text-align: center;">
+<img src="./readmeImages/screenshot1.png" width="40%" height="40%" />
+<img src="./readmeImages/screenshot2.png" width="40%" height="40%" />
+</div>
 
-use `emoji_frozen.pb` model from `emoji-tf-ios`
+changed by [`emoji-tf-ios`](https://github.com/h4x3rotab/emoji-tf-ios); use `emoji_frozen.pb` model from `emoji-tf-ios`.
 
 
 ### how to run
@@ -68,9 +72,9 @@ it will compile the `TensorFlow for iOS` automatically
 
 # 中文介绍
 
-在 [`emoji-tf-ios`](https://github.com/h4x3rotab/emoji-tf-ios)基础上进行修改；
+这是一个TensorFlow运行在iOS上的demo，可以从用户输入的文本预测用户可能需要输入的emoji表情。
 
-使用了`emoji-tf-ios` 的 `emoji_frozen.pb` 模型
+在 [`emoji-tf-ios`](https://github.com/h4x3rotab/emoji-tf-ios)基础上进行修改；使用了`emoji-tf-ios` 的 `emoji_frozen.pb` 模型。
 
 ### 如何运行
 

@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D746D1081F17AA5A000EBC8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D746D1071F17AA5A000EBC8B /* AppDelegate.swift */; };
+		D746D10F1F17AA5A000EBC8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D746D10E1F17AA5A000EBC8B /* Assets.xcassets */; };
+		D746D1121F17AA5A000EBC8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D746D1101F17AA5A000EBC8B /* LaunchScreen.storyboard */; };
+		D746D11B1F17AAD0000EBC8B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D746D1191F17AAD0000EBC8B /* MainViewController.swift */; };
+		D746D11C1F17AAD0000EBC8B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D746D11A1F17AAD0000EBC8B /* MainViewController.xib */; };
+		D746D1201F17AD9B000EBC8B /* RunInferenceOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = D746D11F1F17AD9B000EBC8B /* RunInferenceOperation.mm */; };
+		D746D1261F17B6E6000EBC8B /* libprotobuf-lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D746D1251F17B62A000EBC8B /* libprotobuf-lite.a */; };
+		D746D1271F17B6E6000EBC8B /* libprotobuf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D746D1241F17B629000EBC8B /* libprotobuf.a */; };
+		D746D1291F17B701000EBC8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D746D1281F17B6FA000EBC8B /* UIKit.framework */; };
+		D746D12B1F17B70F000EBC8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D746D12A1F17B707000EBC8B /* Foundation.framework */; };
+		D746D12D1F17B716000EBC8B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D746D12C1F17B714000EBC8B /* Accelerate.framework */; };
+		D746D1311F17BE99000EBC8B /* emoji_frozen.pb in Resources */ = {isa = PBXBuildFile; fileRef = D746D1301F17BE8D000EBC8B /* emoji_frozen.pb */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D746D1041F17AA5A000EBC8B /* LibTensorFlowForiOSSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibTensorFlowForiOSSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D746D1071F17AA5A000EBC8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D746D10E1F17AA5A000EBC8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D746D1111F17AA5A000EBC8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D746D1131F17AA5A000EBC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D746D1191F17AAD0000EBC8B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D746D11A1F17AAD0000EBC8B /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		D746D11D1F17AD9B000EBC8B /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		D746D11E1F17AD9B000EBC8B /* RunInferenceOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunInferenceOperation.h; sourceTree = "<group>"; };
+		D746D11F1F17AD9B000EBC8B /* RunInferenceOperation.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RunInferenceOperation.mm; sourceTree = "<group>"; };
+		D746D1221F17B50E000EBC8B /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libprotobuf-lite.a"; path = "tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a"; sourceTree = "<group>"; };
+		D746D1231F17B50F000EBC8B /* libprotobuf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobuf.a; path = tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a; sourceTree = "<group>"; };
+		D746D1241F17B629000EBC8B /* libprotobuf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprotobuf.a; path = tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf.a; sourceTree = "<group>"; };
+		D746D1251F17B62A000EBC8B /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libprotobuf-lite.a"; path = "tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib/libprotobuf-lite.a"; sourceTree = "<group>"; };
+		D746D1281F17B6FA000EBC8B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D746D12A1F17B707000EBC8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D746D12C1F17B714000EBC8B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D746D1301F17BE8D000EBC8B /* emoji_frozen.pb */ = {isa = PBXFileReference; lastKnownFileType = file; path = emoji_frozen.pb; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D746D1011F17AA5A000EBC8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D746D12D1F17B716000EBC8B /* Accelerate.framework in Frameworks */,
+				D746D12B1F17B70F000EBC8B /* Foundation.framework in Frameworks */,
+				D746D1291F17B701000EBC8B /* UIKit.framework in Frameworks */,
+				D746D1261F17B6E6000EBC8B /* libprotobuf-lite.a in Frameworks */,
+				D746D1271F17B6E6000EBC8B /* libprotobuf.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D746D0FB1F17AA5A000EBC8B = {
+			isa = PBXGroup;
+			children = (
+				D746D12F1F17BE8D000EBC8B /* data */,
+				D746D12E1F17BE79000EBC8B /* lib */,
+				D746D1061F17AA5A000EBC8B /* LibTensorFlowForiOSSwift */,
+				D746D1051F17AA5A000EBC8B /* Products */,
+				D746D1211F17B50D000EBC8B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D746D1051F17AA5A000EBC8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D746D1041F17AA5A000EBC8B /* LibTensorFlowForiOSSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D746D1061F17AA5A000EBC8B /* LibTensorFlowForiOSSwift */ = {
+			isa = PBXGroup;
+			children = (
+				D746D11D1F17AD9B000EBC8B /* Bridging-Header.h */,
+				D746D1071F17AA5A000EBC8B /* AppDelegate.swift */,
+				D746D11E1F17AD9B000EBC8B /* RunInferenceOperation.h */,
+				D746D11F1F17AD9B000EBC8B /* RunInferenceOperation.mm */,
+				D746D1191F17AAD0000EBC8B /* MainViewController.swift */,
+				D746D11A1F17AAD0000EBC8B /* MainViewController.xib */,
+				D746D10E1F17AA5A000EBC8B /* Assets.xcassets */,
+				D746D1101F17AA5A000EBC8B /* LaunchScreen.storyboard */,
+				D746D1131F17AA5A000EBC8B /* Info.plist */,
+			);
+			path = LibTensorFlowForiOSSwift;
+			sourceTree = "<group>";
+		};
+		D746D1211F17B50D000EBC8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D746D12C1F17B714000EBC8B /* Accelerate.framework */,
+				D746D12A1F17B707000EBC8B /* Foundation.framework */,
+				D746D1281F17B6FA000EBC8B /* UIKit.framework */,
+				D746D1221F17B50E000EBC8B /* libprotobuf-lite.a */,
+				D746D1231F17B50F000EBC8B /* libprotobuf.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D746D12E1F17BE79000EBC8B /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				D746D1251F17B62A000EBC8B /* libprotobuf-lite.a */,
+				D746D1241F17B629000EBC8B /* libprotobuf.a */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		D746D12F1F17BE8D000EBC8B /* data */ = {
+			isa = PBXGroup;
+			children = (
+				D746D1301F17BE8D000EBC8B /* emoji_frozen.pb */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D746D1031F17AA5A000EBC8B /* LibTensorFlowForiOSSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D746D1161F17AA5A000EBC8B /* Build configuration list for PBXNativeTarget "LibTensorFlowForiOSSwift" */;
+			buildPhases = (
+				D746D1001F17AA5A000EBC8B /* Sources */,
+				D746D1011F17AA5A000EBC8B /* Frameworks */,
+				D746D1021F17AA5A000EBC8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LibTensorFlowForiOSSwift;
+			productName = LibTensorFlowForiOSSwift;
+			productReference = D746D1041F17AA5A000EBC8B /* LibTensorFlowForiOSSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D746D0FC1F17AA5A000EBC8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "邵伟男";
+				TargetAttributes = {
+					D746D1031F17AA5A000EBC8B = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = D746D0FF1F17AA5A000EBC8B /* Build configuration list for PBXProject "LibTensorFlowForiOSSwift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D746D0FB1F17AA5A000EBC8B;
+			productRefGroup = D746D1051F17AA5A000EBC8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D746D1031F17AA5A000EBC8B /* LibTensorFlowForiOSSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D746D1021F17AA5A000EBC8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D746D1311F17BE99000EBC8B /* emoji_frozen.pb in Resources */,
+				D746D1121F17AA5A000EBC8B /* LaunchScreen.storyboard in Resources */,
+				D746D11C1F17AAD0000EBC8B /* MainViewController.xib in Resources */,
+				D746D10F1F17AA5A000EBC8B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D746D1001F17AA5A000EBC8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D746D1081F17AA5A000EBC8B /* AppDelegate.swift in Sources */,
+				D746D11B1F17AAD0000EBC8B /* MainViewController.swift in Sources */,
+				D746D1201F17AD9B000EBC8B /* RunInferenceOperation.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D746D1101F17AA5A000EBC8B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D746D1111F17AA5A000EBC8B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D746D1141F17AA5A000EBC8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D746D1151F17AA5A000EBC8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D746D1171F17AA5A000EBC8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6GA5676ZM3;
+				ENABLE_BITCODE = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				GCC_WARN_PEDANTIC = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/tensorflow/",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/src/",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/downloads",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/downloads/eigen",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/gen/proto",
+				);
+				INFOPLIST_FILE = LibTensorFlowForiOSSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/gen/lib",
+					"$(PROJECT_DIR)/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib",
+				);
+				OTHER_CFLAGS = (
+					"-isystem",
+					"$(SRCROOT)/tensorflow",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.LibTensorFlowForiOSSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "58c1d854-9c7b-4605-9757-03323abb9fba";
+				PROVISIONING_PROFILE_SPECIFIER = wanjiaWildcard;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "LibTensorFlowForiOSSwift/Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D746D1181F17AA5A000EBC8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6GA5676ZM3;
+				ENABLE_BITCODE = NO;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				GCC_WARN_PEDANTIC = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/tensorflow/",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/downloads/protobuf/src/",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/downloads",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/downloads/eigen",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/gen/proto",
+				);
+				INFOPLIST_FILE = LibTensorFlowForiOSSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/gen/lib",
+					"$(PROJECT_DIR)/tensorflow/tensorflow/contrib/makefile/gen/protobuf_ios/lib",
+				);
+				OTHER_CFLAGS = (
+					"-isystem",
+					"$(SRCROOT)/tensorflow",
+				);
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.LibTensorFlowForiOSSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "58c1d854-9c7b-4605-9757-03323abb9fba";
+				PROVISIONING_PROFILE_SPECIFIER = wanjiaWildcard;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "LibTensorFlowForiOSSwift/Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D746D0FF1F17AA5A000EBC8B /* Build configuration list for PBXProject "LibTensorFlowForiOSSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D746D1141F17AA5A000EBC8B /* Debug */,
+				D746D1151F17AA5A000EBC8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D746D1161F17AA5A000EBC8B /* Build configuration list for PBXNativeTarget "LibTensorFlowForiOSSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D746D1171F17AA5A000EBC8B /* Debug */,
+				D746D1181F17AA5A000EBC8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D746D0FC1F17AA5A000EBC8B /* Project object */;
+}

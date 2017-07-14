@@ -3,4 +3,5 @@ xcuserdata/
 build/
 tensorflow/
 tensorflow-*.zip
+.vscode/
 

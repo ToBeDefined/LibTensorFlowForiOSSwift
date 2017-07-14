@@ -29,6 +29,93 @@ it will compile the `TensorFlow for iOS` automatically
 
 
 - download TensorFlow to the root folder and compile
+	> befor compile source file, you should change flow TensorFlow Kernel files. (version <= 1.2.1)
+	> 
+	> in `run.sh`, it will change them automatically
+	>
+	> kernel path: `tensorflow/tensorflow/core/kernels`
+
+	- `cwise_op_add_1.cc`
+		> before:
+
+		```c++
+		...
+		...
+		#include "tensorflow/core/kernels/cwise_ops_common.h"
+
+		namespace tensorflow {
+		REGISTER5(BinaryOp, CPU, "Add", functor::add, float, Eigen::half, double, int32,
+		          int64);
+
+		#if TENSORFLOW_USE_SYCL
+		...
+		...
+		```
+
+		> change to:
+
+		```c++
+		...
+		...
+		#include "tensorflow/core/kernels/cwise_ops_common.h"
+
+		namespace tensorflow {
+		REGISTER5(BinaryOp, CPU, "Add", functor::add, float, Eigen::half, double, int32,
+		          int64);
+
+		// line 21 insert this code
+		#if defined(__ANDROID_TYPES_SLIM__)
+		REGISTER(BinaryOp, CPU, "Add", functor::add, int32);
+		#endif  // __ANDROID_TYPES_SLIM__
+		// insert end
+
+		#if TENSORFLOW_USE_SYCL
+		...
+		...
+		```
+
+	- `cwise_op_less.cc`
+		> before:
+
+		```c++
+		...
+		...
+		#include "tensorflow/core/kernels/cwise_ops_common.h"
+
+		namespace tensorflow {
+		REGISTER8(BinaryOp, CPU, "Less", functor::less, float, Eigen::half, double,
+		          int32, int64, uint8, int8, int16);
+		#if GOOGLE_CUDA
+		REGISTER7(BinaryOp, GPU, "Less", functor::less, float, Eigen::half, double,
+		          int64, uint8, int8, int16);
+		...
+		...
+		```
+
+		> change to:
+
+		```c++
+		...
+		...
+		#include "tensorflow/core/kernels/cwise_ops_common.h"
+
+		namespace tensorflow {
+		REGISTER8(BinaryOp, CPU, "Less", functor::less, float, Eigen::half, double,
+		          int32, int64, uint8, int8, int16);
+		
+		// line 21 insert this code
+		#if defined(__ANDROID_TYPES_SLIM__)
+		REGISTER(BinaryOp, CPU, "Less", functor::less, int32);
+		#endif  // __ANDROID_TYPES_SLIM__
+		// insert end
+
+		#if GOOGLE_CUDA
+		REGISTER7(BinaryOp, GPU, "Less", functor::less, float, Eigen::half, double,
+		          int64, uint8, int8, int16);
+		...
+		...
+		```
+
 
 - about `libtensorflow-core.a`
 	- in `Other Link Flags` add `$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a`
@@ -63,16 +150,22 @@ it will compile the `TensorFlow for iOS` automatically
 
 
 ### reference:
-- compile TensorFlow:https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/makefile
+- compile TensorFlow:
+	> https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/makefile
 
-- import TensorFlow to iOS:https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/ios/README.md
+- change Kernels error:
+	> https://github.com/h4x3rotab/emoji-tf-ios/blob/master/README.md
 
-- suppress warning of TensorFlow:https://clang.llvm.org/docs/UsersManual.html%23id27
+- import TensorFlow to iOS:
+	> https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/ios/README.md
+
+- suppress warning of TensorFlow:
+	> https://clang.llvm.org/docs/UsersManual.html%23id27
 
 
 # 中文介绍
 
-这是一个TensorFlow运行在iOS上的demo，可以从用户输入的文本预测用户可能需要输入的emoji表情。
+这是一个TensorFlow运行在iOS上的demo，可以从用户输入的文本预测用户可能需要输入的emoji表情。
 
 在 [`emoji-tf-ios`](https://github.com/h4x3rotab/emoji-tf-ios)基础上进行修改；使用了`emoji-tf-ios` 的 `emoji_frozen.pb` 模型。
 
@@ -93,6 +186,94 @@ run.sh会自动的编译 `TensorFlow for iOS`
 
 
 - 下载TensorFlow到项目根目录并编译
+	> 在编译源文件之前, 要先进行修改TensorFlow Kernel的一些文件（版本 <= 1.2.1）
+	> 
+	> 在 `run.sh` 中会自动去修改这些文件
+	>
+	> kernel path: `tensorflow/tensorflow/core/kernels`
+
+	- `cwise_op_add_1.cc`
+
+		> 源码:
+
+		```c++
+		...
+		...
+		#include "tensorflow/core/kernels/cwise_ops_common.h"
+
+		namespace tensorflow {
+		REGISTER5(BinaryOp, CPU, "Add", functor::add, float, Eigen::half, double, int32,
+		          int64);
+
+		#if TENSORFLOW_USE_SYCL
+		...
+		...
+		```
+
+		> 修改为:
+
+		```c++
+		...
+		...
+		#include "tensorflow/core/kernels/cwise_ops_common.h"
+
+		namespace tensorflow {
+		REGISTER5(BinaryOp, CPU, "Add", functor::add, float, Eigen::half, double, int32,
+		          int64);
+
+		// line 21 insert this code
+		#if defined(__ANDROID_TYPES_SLIM__)
+		REGISTER(BinaryOp, CPU, "Add", functor::add, int32);
+		#endif  // __ANDROID_TYPES_SLIM__
+		// insert end
+
+		#if TENSORFLOW_USE_SYCL
+		...
+		...
+		```
+
+	- `cwise_op_less.cc`
+
+		> 源码:
+
+		```c++
+		...
+		...
+		#include "tensorflow/core/kernels/cwise_ops_common.h"
+
+		namespace tensorflow {
+		REGISTER8(BinaryOp, CPU, "Less", functor::less, float, Eigen::half, double,
+		          int32, int64, uint8, int8, int16);
+		#if GOOGLE_CUDA
+		REGISTER7(BinaryOp, GPU, "Less", functor::less, float, Eigen::half, double,
+		          int64, uint8, int8, int16);
+		...
+		...
+		```
+
+		> 修改为:
+
+		```c++
+		...
+		...
+		#include "tensorflow/core/kernels/cwise_ops_common.h"
+
+		namespace tensorflow {
+		REGISTER8(BinaryOp, CPU, "Less", functor::less, float, Eigen::half, double,
+		          int32, int64, uint8, int8, int16);
+		
+		// line 21 insert this code
+		#if defined(__ANDROID_TYPES_SLIM__)
+		REGISTER(BinaryOp, CPU, "Less", functor::less, int32);
+		#endif  // __ANDROID_TYPES_SLIM__
+		// insert end
+
+		#if GOOGLE_CUDA
+		REGISTER7(BinaryOp, GPU, "Less", functor::less, float, Eigen::half, double,
+		          int64, uint8, int8, int16);
+		...
+		...
+		```
 
 - `libtensorflow-core.a`
 	- `Other Link Flags` 中加入 `$(SRCROOT)/tensorflow/tensorflow/contrib/makefile/gen/lib/libtensorflow-core.a`
@@ -129,8 +310,14 @@ run.sh会自动的编译 `TensorFlow for iOS`
 
 
 ### 参考：
-- 编译TensorFlow：https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/makefile
+- 编译TensorFlow：
+	> https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/makefile
 
-- 项目中导入TensorFlow静态库：https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/ios/README.md
+- 修改Kernels错误：
+	> https://github.com/h4x3rotab/emoji-tf-ios/blob/master/README.md
 
-- 忽略TensorFlow警告：https://clang.llvm.org/docs/UsersManual.html%23id27
+- 项目中导入TensorFlow静态库：
+	> https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/ios/README.md
+
+- 忽略TensorFlow警告：
+	> https://clang.llvm.org/docs/UsersManual.html%23id27

@@ -16,7 +16,7 @@ In the end, will automatically open Xcode
 
 you can run the project now
 
-### about `run.sh` 
+### about `run.sh`
 
 it will compile the `TensorFlow for iOS` automatically
 

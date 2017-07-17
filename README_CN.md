@@ -162,4 +162,4 @@ run.sh会自动的编译 `TensorFlow for iOS`
 	> https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/ios/README.md
 
 - 忽略TensorFlow警告：
-	> https://clang.llvm.org/docs/UsersManual.html%23id27
+	> https://clang.llvm.org/docs/UsersManual.html#id27

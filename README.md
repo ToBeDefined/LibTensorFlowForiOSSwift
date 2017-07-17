@@ -162,4 +162,4 @@ it will compile the `TensorFlow for iOS` automatically
 	> https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/ios/README.md
 
 - suppress warning of TensorFlow:
-	> https://clang.llvm.org/docs/UsersManual.html%23id27
+	> https://clang.llvm.org/docs/UsersManual.html#id27

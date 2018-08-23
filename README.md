@@ -9,7 +9,7 @@ This is a TensorFlow demo that can be run on iOS and use swift develop. It imple
 <img src="./readmeImages/screenshot2.png" width="40%" height="40%" />
 </div>
 
-changed by [`emoji-tf-ios`](https://github.com/h4x3rotab/emoji-tf-ios); use `emoji_frozen.pb` model from `emoji-tf-ios`.
+Modified from [`emoji-tf-ios`](https://github.com/h4x3rotab/emoji-tf-ios); use `emoji_frozen.pb` model from `emoji-tf-ios`.
 
 
 ### how to run
